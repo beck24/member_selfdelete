@@ -36,4 +36,4 @@ function member_selfdelete_pagesetup() {
 	}
 }
 
-register_elgg_event_handler('init','system','member_selfdelete_init');
+elgg_register_event_handler('init','system','member_selfdelete_init');

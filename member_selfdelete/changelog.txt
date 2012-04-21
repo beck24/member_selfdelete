@@ -1,5 +1,8 @@
 Changelog
 
+04/20/2012
+Replace deprecated event hook registration
+
 04/07/2012
 Fix issue with white screen during activation on some systems
 
