@@ -23,7 +23,7 @@ $total = elgg_get_annotations($params);
 $content = "<br>";
 
 $content .= elgg_view('navigation/pagination',array(
-		'baseurl' => elgg_get_site_url() . "admin/users/member_selfdelete/reasons",
+		'base_url' => elgg_get_site_url() . "admin/users/member_selfdelete/reasons",
 		'offset' => $offset,
 		'count' => $total,
 		'limit' => $limit,

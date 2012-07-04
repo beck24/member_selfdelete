@@ -99,10 +99,7 @@ switch ($method) {
     
     // reset password to unusable password
     $user->password = md5(substr(md5(microtime()), 0, 8));
-    // example.com tosses all email
-    // plus we'll be preventing mail from being sent to this user
-    // so we shouldn't be affecting them anyway
-    $user->email = "anon{$user->guid}@example.com";
+    $user->email = "anon{$user->guid}@" . get_site_domain();
     
     // set our single piece of metadata that tells us this user has been deleted
     $user->member_selfdelete = "anonymized";
