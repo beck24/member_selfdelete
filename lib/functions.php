@@ -7,7 +7,7 @@ function member_selfdelete_email_system($hook, $type, $return, $params){
   
   $user = get_user_by_email($email);
   
-  if($user->member_selfdelete == "anonymized"){
+  if($user[0]->member_selfdelete == "anonymized"){
     return FALSE;
   }
 }
