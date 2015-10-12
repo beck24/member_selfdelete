@@ -1,5 +1,11 @@
 == Version History ==
 
+2.0.0 (10/12/2015):
+ - upgrade for Elgg 1.9+
+ - general code cleanup
+ - require password to delete account
+ - prevent administrators from deleting themselves
+
 1.4 (07/04/2012):
 
  - Removed deprecation notice

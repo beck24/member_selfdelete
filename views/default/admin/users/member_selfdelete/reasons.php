@@ -1,15 +1,11 @@
 <?php
 
-// redundant but you can never be too careful
-admin_gatekeeper();
+namespace Beck24\MemberSelfDelete;
 
 // get our inputs
 $offset = get_input('offset', 0);
 if($offset < 0){ $offset = 0; }
 $limit = get_input('limit', 10);
-
-// override any permissions so we can see everything
-$oldaccess = elgg_set_ignore_access(TRUE);
 
 // get total for pagination
 $params = array(
@@ -36,11 +32,6 @@ $annotations = elgg_get_annotations(array(
   'offset' => $offset,
   'order_by'  =>  'n_table.time_created desc'
 ));
-
-
-// reset permissions
-elgg_set_ignore_access($oldaccess);
-
 
 if(count($annotations) > 0){
   foreach($annotations as $annotation){
