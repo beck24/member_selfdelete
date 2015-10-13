@@ -5,6 +5,7 @@
  - general code cleanup
  - require password to delete account
  - prevent administrators from deleting themselves
+ - allow admin to delete feedback
 
 1.4 (07/04/2012):
 
