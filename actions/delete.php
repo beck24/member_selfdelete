@@ -47,6 +47,10 @@ switch ($method) {
 		// just bans the user
 		ban_user($user->guid, elgg_echo('member_selfdelete:self:banned'));
 		logout();
+		
+		session_regenerate_id(true);
+
+		system_message(elgg_echo('member_selfdelete:action:banned'));
 		break;
 	case "anonymize":
 		// rename display name to inactive
@@ -114,14 +118,18 @@ switch ($method) {
 
 		$user->save();
 		logout();
+		session_regenerate_id(true);
+
+		system_message(elgg_echo('member_selfdelete:action:anonymized'));
 		break;
 	default:
 		// default is to delete the user
 		$user->delete();
+		session_regenerate_id(true);
+
+		system_message(elgg_echo('member_selfdelete:deleted'));
 		break;
 }
-
-system_message(elgg_echo('member_selfdelete:deleted'));
 
 elgg_clear_sticky_form('member_selfdelete');
 
